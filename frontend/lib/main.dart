@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'views/home/home_screen.dart'; // 경로가 정확한지 확인해 주세요!
+import 'screens/home_screen.dart'; // 경로가 정확한지 확인해 주세요!
 
 void main() {
   runApp(const MyApp());
