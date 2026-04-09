@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b096d724-b95d-4676-a269-26e85c5c1755" name="Changes" comment="" />
+    <list default="true" id="b096d724-b95d-4676-a269-26e85c5c1755" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/data/models/keyword_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/data/models/news_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/data/models/report_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/data/providers/report_provider.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/data/repositories/report_repository.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/views/archive/archive_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/views/home/home_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/views/insight/insight_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/views/trend/trend_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/views/widgets/keyword_chip.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/views/widgets/mood_badge.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/lib/views/widgets/news_card.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/linux/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/linux/flutter/generated_plugin_registrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/linux/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/windows/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/windows/flutter/generated_plugin_registrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/windows/flutter/generated_plugins.cmake" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,15 +62,18 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "SMC",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "PYK",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/sungminchang/Desktop/Univ./3-1/오픈소스소프트웨어응용/Git/A-GNRI-Auto-scheduled-Global-News-Report-Integrator",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="TaskManager">
@@ -60,5 +85,15 @@
       <updated>1774926857583</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/frontend/lib/main.dart</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

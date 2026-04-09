@@ -75,7 +75,6 @@ flutterfire configure
 ```bash
 flutter run
 ```
-
 ---
 
 ## 📁 프로젝트 폴더 구조 (수정본)
@@ -137,3 +136,4 @@ A-GNRI/
 ```
 
 ---
+>>>>>>> SMC
