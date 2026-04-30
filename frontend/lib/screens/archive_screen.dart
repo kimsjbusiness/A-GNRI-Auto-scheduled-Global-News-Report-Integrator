@@ -1,3 +1,5 @@
+// 과거 리포트
+
 import 'package:flutter/material.dart';
 import '../widgets/app_header.dart';
 import '../widgets/bottom_nav_bar.dart';
@@ -90,98 +92,14 @@ class ArchiveScreen extends StatelessWidget {
                       style: TextStyle(fontSize: 14, color: Colors.grey),
                     ),
                     const SizedBox(height: 20),
-                    Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Colors.grey.shade200),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 8,
-                                  vertical: 3,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: _moodBgColor('bright'),
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(
-                                      _moodIcon('bright'),
-                                      size: 12,
-                                      color: _moodColor('bright'),
-                                    ),
-                                    const SizedBox(width: 3),
-                                    Text(
-                                      '밝음',
-                                      style: TextStyle(
-                                        fontSize: 11,
-                                        fontWeight: FontWeight.bold,
-                                        color: _moodColor('bright'),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const SizedBox(width: 8),
-                              ...['친환경 에너지', '반도체'].map(
-                                (tag) => Container(
-                                  margin: const EdgeInsets.only(right: 8),
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 8,
-                                    vertical: 3,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey.shade100,
-                                    borderRadius: BorderRadius.circular(6),
-                                  ),
-                                  child: Text(
-                                    tag,
-                                    style: TextStyle(
-                                      fontSize: 11,
-                                      color: Colors.grey.shade700,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 8),
-                          const Text(
-                            '현재 시장의 분위기는 밝으며, 유동성이 높다고 판단되는 테마는 "친환경 에너지"와 "반도체" 입니다.',
-                            style: TextStyle(fontSize: 13, color: Colors.black87),
-                          ),
-                          const SizedBox(height: 12),
-                          const Text(
-                            '글로벌 기후 정상회의에서 15개국이 탄소 배출 감축에 합의하며 친환경 정책 기대감이 높아졌고, 아시아 태평양 지역의 경기 회복과 한국 반도체 수출 증가가 함께 나타나며 시장 전반의 투자 심리가 개선되고 있습니다.',
-                            style: TextStyle(fontSize: 13, color: Colors.black87, height: 1.4),
-                          ),
-                          const SizedBox(height: 12),
-                          const Text(
-                            '탄소 감축 정책 강화와 반도체 업황 회복이 동시에 나타나며 관련 테마의 유동성이 커지고 있습니다.',
-                            style: TextStyle(fontSize: 13, color: Colors.black54),
-                          ),
-                          const SizedBox(height: 12),
-                          Wrap(
-                            spacing: 8,
-                            children: ['탄소감축', '친환경', '반도체', '경제회복'].map(
-                              (keyword) => Chip(
-                                label: Text(keyword),
-                              ),
-                            ).toList(),
-                          ),
-                        ],
+                    const Text(
+                      '과거 리포트',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 12),
                     ...List.generate(_mockInsights.length, (i) {
                       final insight = _mockInsights[i];
                       final moodType = insight['moodType'] as String;
@@ -317,7 +235,7 @@ class _InsightCard extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 8),
-          Icon(Icons.chevron_right, color: Colors.grey[400]),
+          Icon(Icons.chevron_right, color: Colors.grey),
         ],
       ),
     );
