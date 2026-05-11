@@ -123,31 +123,76 @@ class InsightScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
+                    // 배지 + X버튼 (1면 스타일)
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 10,
+                                vertical: 6,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(999),
+                                border: Border.all(color: const Color(0xFFE3E3E8)),
+                              ),
+                              child: Text(
+                                data['mood'] as String,
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color(0xFF666674),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 10,
+                                vertical: 6,
+                              ),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFE8F7EC),
+                                borderRadius: BorderRadius.circular(999),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  const Icon(
+                                    Icons.trending_up,
+                                    size: 14,
+                                    color: Color(0xFF27AE60),
+                                  ),
+                                  const SizedBox(width: 5),
+                                  Text(
+                                    '신뢰도 ${data['confidence']}',
+                                    style: const TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color(0xFF27AE60),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                         GestureDetector(
                           onTap: () => Navigator.pop(context),
                           child: Container(
-                            width: 36,
-                            height: 36,
+                            padding: const EdgeInsets.all(6),
                             decoration: BoxDecoration(
-                              color: const Color(0xFFF1F1F5),
-                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.grey.shade100,
+                              shape: BoxShape.circle,
                             ),
                             child: const Icon(
                               Icons.close,
                               size: 18,
-                              color: Color(0xFF444451),
+                              color: Colors.black54,
                             ),
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        const Text(
-                          '시장 분석 상세',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w800,
-                            color: Color(0xFF111111),
                           ),
                         ),
                       ],
