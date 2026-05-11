@@ -1,9 +1,12 @@
+// 1면(홈)
+
 import 'package:flutter/material.dart';
 import '../widgets/app_header.dart';
 import '../widgets/bottom_nav_bar.dart';
 import '../widgets/news_card.dart';
 import '../widgets/page_tab_bar.dart';
 import '../core/utils.dart';
+import 'insight_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -30,6 +33,20 @@ class HomeScreen extends StatelessWidget {
         keywords: ['경제회복', '반도체'],
       ),
     ];
+    final Map<String, dynamic> insightData = {
+      'mood': '밝음',
+      'confidence': '72%',
+      'themes': ['친환경 에너지', '반도체'],
+      'keywords': [
+        ...cards[0].keywords,
+        ...cards[1].keywords,
+      ],
+      'summary':
+          '현재 시장의 분위기는 밝으며, 유동성이 높다 판단되는 주식의 테마는 \'친환경 에너지\'와 \'반도체\'입니다.',
+      'reason': '${cards[0].summary} ${cards[1].summary}',
+      'positiveRatio': 0.72,
+      'negativeRatio': 0.28,
+    };
 
     return Scaffold(
       backgroundColor: const Color(0xFFF6F6F8),
@@ -38,27 +55,48 @@ class HomeScreen extends StatelessWidget {
           children: [
             const AppHeader(),
             Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.fromLTRB(24, 20, 24, 24),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _DateSection(dateText: formatDate(now)),
-                    const SizedBox(height: 18),
-                    const PageTabBar(selectedPage: 1),
-                    const SizedBox(height: 18),
-                    ...cards.map(
-                      (card) => Padding(
-                        padding: const EdgeInsets.only(bottom: 16),
-                        child: NewsCard(
-                          data: card,
-                          onTap: () => _showNewsBottomSheet(context, card),
+              child: GestureDetector(
+                onHorizontalDragEnd: (details) {
+                  final velocity = details.primaryVelocity ?? 0;
+
+                  if (velocity < -300) {
+                    Navigator.pushReplacement(
+                      context,
+                      PageRouteBuilder(
+                        pageBuilder: (_, __, ___) => InsightScreen(
+                          reportData: insightData,
+                        ),
+                        transitionDuration: Duration.zero,
+                        reverseTransitionDuration: Duration.zero,
+                      ),
+                    );
+                  }
+                },
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.fromLTRB(24, 20, 24, 24),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _DateSection(dateText: formatDate(now)),
+                      const SizedBox(height: 18),
+                      PageTabBar(
+                        selectedPage: 1,
+                        insightData: insightData,
+                      ),
+                      const SizedBox(height: 18),
+                      ...cards.map(
+                        (card) => Padding(
+                          padding: const EdgeInsets.only(bottom: 16),
+                          child: NewsCard(
+                            data: card,
+                            onTap: () => _showNewsBottomSheet(context, card),
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 4),
-                    const MainNewsSection(),
-                  ],
+                      const SizedBox(height: 4),
+                      const MainNewsSection(),
+                    ],
+                  ),
                 ),
               ),
             ),

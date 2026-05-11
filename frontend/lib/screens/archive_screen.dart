@@ -1,3 +1,5 @@
+// 과거 리포트
+
 import 'package:flutter/material.dart';
 import '../widgets/app_header.dart';
 import '../widgets/bottom_nav_bar.dart';
@@ -136,6 +138,17 @@ class ArchiveScreen extends StatelessWidget {
                       style: TextStyle(fontSize: 14, color: Colors.grey),
                     ),
                     const SizedBox(height: 20),
+<<<<<<< HEAD
+=======
+                    const Text(
+                      '과거 리포트',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+>>>>>>> origin/SMC
                     ...List.generate(_mockInsights.length, (i) {
                       final report = _mockInsights[i];
                       final moodType = report['moodType'] as String;
@@ -569,6 +582,11 @@ class _ModalNewsCard extends StatelessWidget {
               ],
             ),
           ),
+<<<<<<< HEAD
+=======
+          const SizedBox(width: 8),
+          Icon(Icons.chevron_right, color: Colors.grey),
+>>>>>>> origin/SMC
         ],
       ),
     );

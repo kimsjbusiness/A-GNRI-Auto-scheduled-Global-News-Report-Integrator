@@ -7,10 +7,12 @@ import '../screens/insight_screen.dart';
 
 class PageTabBar extends StatelessWidget {
   final int selectedPage; // 1, 2, 3
+  final Map<String, dynamic>? insightData;
 
   const PageTabBar({
     super.key,
     required this.selectedPage,
+    this.insightData,
   });
 
   void _moveToPage(BuildContext context, int page) {
@@ -29,7 +31,7 @@ class PageTabBar extends StatelessWidget {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (_) => const InsightScreen(),
+            builder: (_) => InsightScreen(reportData: insightData),
           ),
         );
         break;
@@ -100,19 +102,35 @@ class _TabItem extends StatelessWidget {
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 150),
           decoration: BoxDecoration(
-            color: isSelected ? Colors.white : Colors.transparent,
+            color: isSelected ? const Color(0xFF111111) : Colors.transparent,
             borderRadius: BorderRadius.circular(12),
+            boxShadow: isSelected
+                ? const [
+                    BoxShadow(
+                      color: Color(0x22000000),
+                      blurRadius: 6,
+                      offset: Offset(0, 2),
+                    ),
+                  ]
+                : null,
           ),
           child: Center(
-            child: Text(
-              title,
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w700,
-                color: isDisabled
-                    ? const Color(0xFFB5B5BD)
-                    : const Color(0xFF222222),
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: isSelected ? FontWeight.w900 : FontWeight.w700,
+                    color: isDisabled
+                        ? const Color(0xFFB5B5BD)
+                        : isSelected
+                            ? Colors.white
+                            : const Color(0xFF8B8B96),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
