@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
-import 'package:timezone/data/latest_all.dart' as tz;
+import 'package:timezone/data/latest_all.dart' as tzdata;
 import 'package:flutter_timezone/flutter_timezone.dart';
 
 const _channelId = 'daily_report';
@@ -16,9 +16,11 @@ class NotificationService {
   static final _plugin = FlutterLocalNotificationsPlugin();
 
   static Future<void> init() async {
-    tz.initializeTimeZones();
-    final tzName = await FlutterTimezone.getLocalTimezone();
-    tz.setLocalLocation(tz.getLocation(tzName));
+    tzdata.initializeTimeZones();
+    final timezone = await FlutterTimezone.getLocalTimezone();
+    tz.setLocalLocation(
+      tz.getLocation(timezone.identifier),
+      );
 
     const android = AndroidInitializationSettings('@mipmap/ic_launcher');
 
